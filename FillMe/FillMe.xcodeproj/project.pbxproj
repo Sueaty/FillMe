@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -50,7 +50,6 @@
 				E7B28892BA9EFE3752C947C9 /* Pods-FillMe.debug.xcconfig */,
 				8E816E60A9EA34A77E19732F /* Pods-FillMe.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -75,16 +74,32 @@
 		804B155C25BF330200AA736F /* FillMe */ = {
 			isa = PBXGroup;
 			children = (
-				804B155D25BF330200AA736F /* AppDelegate.swift */,
-				804B155F25BF330200AA736F /* SceneDelegate.swift */,
+				804B158125BF36A000AA736F /* Resources */,
+				804B158025BF369700AA736F /* EntryPoint */,
 				804B156125BF330200AA736F /* ViewController.swift */,
 				804B156325BF330200AA736F /* Main.storyboard */,
-				804B156625BF331600AA736F /* Assets.xcassets */,
-				804B156825BF331600AA736F /* LaunchScreen.storyboard */,
 				804B156B25BF331600AA736F /* Info.plist */,
 				804B157225BF338800AA736F /* GoogleService-Info.plist */,
 			);
 			path = FillMe;
+			sourceTree = "<group>";
+		};
+		804B158025BF369700AA736F /* EntryPoint */ = {
+			isa = PBXGroup;
+			children = (
+				804B156825BF331600AA736F /* LaunchScreen.storyboard */,
+				804B155D25BF330200AA736F /* AppDelegate.swift */,
+				804B155F25BF330200AA736F /* SceneDelegate.swift */,
+			);
+			path = EntryPoint;
+			sourceTree = "<group>";
+		};
+		804B158125BF36A000AA736F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				804B156625BF331600AA736F /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		FED232FADB971243E9853585 /* Frameworks */ = {
