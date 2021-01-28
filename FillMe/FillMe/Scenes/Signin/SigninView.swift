@@ -12,19 +12,20 @@ class SigninView: UIView {
     
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var pwdTextField: UITextField!
     
     let actionCodeSettings = ActionCodeSettings()
     
-    @IBAction func sendLinkButtonTouched(_ sender: UIButton) {
-        guard let email = emailTextField.text else { return }
-        Auth.auth().sendSignInLink(toEmail: email,
-                                   actionCodeSettings: actionCodeSettings) { error in
-            // manage error
-                // do action
-            
-            // if the link was sent successfully, inform the user
-            // save the email locally so you don't need to ask the suer for it again
-            UserDefaults.standard.set(email, forKey: "Email")
+    @IBAction func signInButtonTouched(_ sender: UIButton) {
+        guard let email = emailTextField.text,
+              let pwd = pwdTextField.text else { return }
+        Auth.auth().createUser(withEmail: email,
+                               password: pwd) { (user, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                print("Register Success")
+            }
         }
     }
     

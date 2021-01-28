@@ -12,11 +12,12 @@
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="J78-zf-N9C"/>
                 <outlet property="emailTextField" destination="A78-oy-ZyB" id="aQs-aU-eJg"/>
+                <outlet property="pwdTextField" destination="0dS-rU-XmB" id="oNW-Fk-RH4"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="185"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일 입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A78-oy-ZyB">
@@ -24,25 +25,33 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호 입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0dS-rU-XmB">
+                    <rect key="frame" x="20" y="108" width="374" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZBP-jI-q4v">
-                    <rect key="frame" x="166" y="98" width="82" height="30"/>
-                    <state key="normal" title="인증링크 전송"/>
+                    <rect key="frame" x="181" y="172" width="52" height="30"/>
+                    <state key="normal" title="회원가입"/>
                     <connections>
-                        <action selector="sendLinkButtonTouched:" destination="-1" eventType="touchUpInside" id="iUD-Vb-Xt0"/>
+                        <action selector="signInButtonTouched:" destination="-1" eventType="touchUpInside" id="iUD-Vb-Xt0"/>
                     </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="0dS-rU-XmB" firstAttribute="top" secondItem="A78-oy-ZyB" secondAttribute="bottom" constant="20" id="1dg-C8-l1E"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="A78-oy-ZyB" secondAttribute="trailing" constant="20" id="8jH-kc-tIC"/>
-                <constraint firstItem="ZBP-jI-q4v" firstAttribute="top" secondItem="A78-oy-ZyB" secondAttribute="bottom" constant="10" id="IYf-C8-Vxk"/>
+                <constraint firstItem="ZBP-jI-q4v" firstAttribute="top" secondItem="0dS-rU-XmB" secondAttribute="bottom" constant="30" id="GTN-1K-eQw"/>
                 <constraint firstItem="A78-oy-ZyB" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="KFy-vY-8cR"/>
+                <constraint firstItem="0dS-rU-XmB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="MXo-Kf-Ok3"/>
                 <constraint firstItem="ZBP-jI-q4v" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="YQr-3N-itO"/>
                 <constraint firstItem="A78-oy-ZyB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="guy-A7-s7O"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="0dS-rU-XmB" secondAttribute="trailing" constant="20" id="ifY-tp-AIZ"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="101.44927536231884" y="108.14732142857143"/>
+            <point key="canvasLocation" x="101.44927536231884" y="129.91071428571428"/>
         </view>
     </objects>
     <resources>
