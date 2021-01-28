@@ -7,7 +7,14 @@
 
 import UIKit
 
+protocol LoginViewDelegate: class {
+    func didTouchSignin()
+    // func didTouchLogin()
+}
+
 final class LoginView: UIView {
+    
+    weak var delegate: LoginViewDelegate?
     
     //MARK:- IBOutlets
     @IBOutlet var contentView: UIView!
@@ -16,13 +23,11 @@ final class LoginView: UIView {
     //MARK:- IBActions
     @IBAction func loginButtonTouched(_ sender: UIButton) {
         // firebase authentication 목록 확인(?)
+            // delegate?.didTouchLogin()
     }
     
     @IBAction func signinButtonTouched(_ sender: Any) {
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let signinVC = storyboard.instantiateViewController(identifier: "SigninViewController")
-        signinVC.modalPresentationStyle = .automatic
+        delegate?.didTouchSignin()
     }
     
     //MARK:- Initializers
