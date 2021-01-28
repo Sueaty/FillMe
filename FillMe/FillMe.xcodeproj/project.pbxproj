@@ -17,6 +17,14 @@
 		804B159C25C0964500AA736F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804B159B25C0964500AA736F /* ProfileViewController.swift */; };
 		804B15A825C09A0600AA736F /* NameImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804B15A725C09A0600AA736F /* NameImageView.swift */; };
 		804B15AB25C09A1000AA736F /* NameImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 804B15AA25C09A1000AA736F /* NameImageView.xib */; };
+		806417B425C1DB1600AED97C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806417B325C1DB1600AED97C /* LoginViewController.swift */; };
+		806417B825C1E34700AED97C /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 806417B725C1E34700AED97C /* LoginView.xib */; };
+		806417BB25C1E5B700AED97C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806417BA25C1E5B700AED97C /* LoginView.swift */; };
+		806417BF25C1EB4600AED97C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806417BE25C1EB4600AED97C /* HomeViewController.swift */; };
+		806417C825C298E100AED97C /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806417C725C298E100AED97C /* ProfileTableViewController.swift */; };
+		806417CC25C2F9AC00AED97C /* SigninView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 806417CB25C2F9AC00AED97C /* SigninView.xib */; };
+		806417CF25C2FDA100AED97C /* SigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806417CE25C2FDA100AED97C /* SigninView.swift */; };
+		806417D225C3024A00AED97C /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806417D125C3024A00AED97C /* SigninViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +39,14 @@
 		804B159B25C0964500AA736F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		804B15A725C09A0600AA736F /* NameImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameImageView.swift; sourceTree = "<group>"; };
 		804B15AA25C09A1000AA736F /* NameImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NameImageView.xib; sourceTree = "<group>"; };
+		806417B325C1DB1600AED97C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		806417B725C1E34700AED97C /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
+		806417BA25C1E5B700AED97C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		806417BE25C1EB4600AED97C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		806417C725C298E100AED97C /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		806417CB25C2F9AC00AED97C /* SigninView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SigninView.xib; sourceTree = "<group>"; };
+		806417CE25C2FDA100AED97C /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
+		806417D125C3024A00AED97C /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
 		8E816E60A9EA34A77E19732F /* Pods-FillMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FillMe.release.xcconfig"; path = "Target Support Files/Pods-FillMe/Pods-FillMe.release.xcconfig"; sourceTree = "<group>"; };
 		AC868F18E0F58C1F2A544750 /* Pods_FillMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FillMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7B28892BA9EFE3752C947C9 /* Pods-FillMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FillMe.debug.xcconfig"; path = "Target Support Files/Pods-FillMe/Pods-FillMe.debug.xcconfig"; sourceTree = "<group>"; };
@@ -109,6 +125,9 @@
 		804B158425BF4F6E00AA736F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				806417CA25C2F84C00AED97C /* Signin */,
+				806417BD25C1EB3700AED97C /* Home */,
+				806417B125C1DA9900AED97C /* Login */,
 				804B158525BF4F7700AA736F /* Profile */,
 			);
 			path = Scenes;
@@ -120,8 +139,37 @@
 				804B159B25C0964500AA736F /* ProfileViewController.swift */,
 				804B15A725C09A0600AA736F /* NameImageView.swift */,
 				804B15AA25C09A1000AA736F /* NameImageView.xib */,
+				806417C725C298E100AED97C /* ProfileTableViewController.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		806417B125C1DA9900AED97C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				806417B325C1DB1600AED97C /* LoginViewController.swift */,
+				806417B725C1E34700AED97C /* LoginView.xib */,
+				806417BA25C1E5B700AED97C /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		806417BD25C1EB3700AED97C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				806417BE25C1EB4600AED97C /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		806417CA25C2F84C00AED97C /* Signin */ = {
+			isa = PBXGroup;
+			children = (
+				806417CB25C2F9AC00AED97C /* SigninView.xib */,
+				806417CE25C2FDA100AED97C /* SigninView.swift */,
+				806417D125C3024A00AED97C /* SigninViewController.swift */,
+			);
+			path = Signin;
 			sourceTree = "<group>";
 		};
 		FED232FADB971243E9853585 /* Frameworks */ = {
@@ -191,8 +239,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				806417CC25C2F9AC00AED97C /* SigninView.xib in Resources */,
 				804B156A25BF331600AA736F /* LaunchScreen.storyboard in Resources */,
 				804B15AB25C09A1000AA736F /* NameImageView.xib in Resources */,
+				806417B825C1E34700AED97C /* LoginView.xib in Resources */,
 				804B157325BF338800AA736F /* GoogleService-Info.plist in Resources */,
 				804B156725BF331600AA736F /* Assets.xcassets in Resources */,
 				804B156525BF330200AA736F /* Main.storyboard in Resources */,
@@ -248,9 +298,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				806417BB25C1E5B700AED97C /* LoginView.swift in Sources */,
 				804B159C25C0964500AA736F /* ProfileViewController.swift in Sources */,
+				806417CF25C2FDA100AED97C /* SigninView.swift in Sources */,
 				804B15A825C09A0600AA736F /* NameImageView.swift in Sources */,
 				804B155E25BF330200AA736F /* AppDelegate.swift in Sources */,
+				806417B425C1DB1600AED97C /* LoginViewController.swift in Sources */,
+				806417D225C3024A00AED97C /* SigninViewController.swift in Sources */,
+				806417BF25C1EB4600AED97C /* HomeViewController.swift in Sources */,
+				806417C825C298E100AED97C /* ProfileTableViewController.swift in Sources */,
 				804B156025BF330200AA736F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
