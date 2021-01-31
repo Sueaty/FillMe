@@ -6,28 +6,25 @@
 //
 
 import UIKit
-import Firebase
 
 class SigninView: UIView {
     
+    //MARK:- IBOutlets
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var pwdTextField: UITextField!
+
+    //MARK:- Properties
+    let viewModel = SigninViewModel()
     
-    let actionCodeSettings = ActionCodeSettings()
-    
-    @IBAction func sendLinkButtonTouched(_ sender: UIButton) {
-        guard let email = emailTextField.text else { return }
-        Auth.auth().sendSignInLink(toEmail: email,
-                                   actionCodeSettings: actionCodeSettings) { error in
-            // manage error
-                // do action
-            
-            // if the link was sent successfully, inform the user
-            // save the email locally so you don't need to ask the suer for it again
-            UserDefaults.standard.set(email, forKey: "Email")
-        }
+    //MARK:- IBActions
+    @IBAction func signInButtonTouched(_ sender: UIButton) {
+        guard let email = emailTextField.text,
+              let password = pwdTextField.text else { return }
+        viewModel.createAccount(email: email, password: password)
     }
     
+    //MARK:- Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInitializer()
@@ -43,13 +40,6 @@ class SigninView: UIView {
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        configureActionCodeSettings()
-    }
-    
-    private func configureActionCodeSettings() {
-        actionCodeSettings.url = URL(string: "https://fillme.sueaty.com")
-        actionCodeSettings.handleCodeInApp = true
-        actionCodeSettings.setIOSBundleID(Bundle.main.bundleIdentifier!)
     }
     
 }
