@@ -41,7 +41,6 @@ final class NetworkService: NetworkServiceType {
         .eraseToAnyPublisher()
     }
     
-    // 이거 결과 combine 처리 해야하는데....흠
     func saveDocument(collectionPath: String, documentPath: String, data: MetaData) -> AnyPublisher<Bool, NetworkServiceError> {
         return Future<Bool, NetworkServiceError> { promise in
             Firestore.firestore()
