@@ -10,7 +10,7 @@ import FirebaseFirestore
 import Firebase
 import Combine
 
-class SigninViewModel {
+final class SigninViewModel {
     
     private var usecase: SigninUseCaseType
     private var cancellables = [AnyCancellable]()
