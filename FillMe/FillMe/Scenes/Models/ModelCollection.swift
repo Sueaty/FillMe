@@ -12,3 +12,10 @@ struct User {
     var email: String
     var uid: String
 }
+
+struct Diary {
+    var date: Date
+    var title: String
+    var content: String
+    var share: Bool
+}

@@ -15,7 +15,7 @@ protocol NetworkServiceType {
     // fetch necessary document from given document reference
     func fetchDocument(docRef: DocumentReference) -> AnyPublisher<MetaData, NetworkServiceError>
     // save necessary document to given document reference
-    func saveDocument(docRef: DocumentReference, data: MetaData) //-> AnyPublisher<Bool, NetworkServiceError>
+    func saveDocument(collectionPath: String, documentPath: String, data: MetaData) -> AnyPublisher<Bool, NetworkServiceError>
 }
 
 final class NetworkService: NetworkServiceType {
@@ -41,12 +41,21 @@ final class NetworkService: NetworkServiceType {
         .eraseToAnyPublisher()
     }
     
-    func saveDocument(docRef: DocumentReference, data toSave: MetaData) { //-> AnyPublisher<Bool, NetworkServiceError>
-        let reference: DocumentReference = docRef
-        reference.setData(toSave)
-//        return Future<Bool, NetworkServiceError> { promise in
-//            reference.setData(toSave)
-//        }
+    // 이거 결과 combine 처리 해야하는데....흠
+    func saveDocument(collectionPath: String, documentPath: String, data: MetaData) -> AnyPublisher<Bool, NetworkServiceError> {
+        return Future<Bool, NetworkServiceError> { promise in
+            Firestore.firestore()
+            .collection(collectionPath)
+            .document(documentPath)
+            .setData(data) { error in
+                if let error = error {
+                    promise(.failure(.firestoreError(error: error)))
+                } else {
+                    promise(.success(true))
+                }
+            }
+        }
+        .eraseToAnyPublisher()
     }
     
 }
