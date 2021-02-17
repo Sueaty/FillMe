@@ -306,7 +306,7 @@
             </objects>
             <point key="canvasLocation" x="4893" y="1542"/>
         </scene>
-        <!--1월 30일 일기-->
+        <!--Write Diary View Controller-->
         <scene sceneID="cnx-Sc-h2f">
             <objects>
                 <viewController id="xht-ee-KIh" customClass="WriteDiaryViewController" customModule="FillMe" customModuleProvider="target" sceneMemberID="viewController">
@@ -385,7 +385,7 @@
                             <constraint firstItem="Ck4-Pi-EXM" firstAttribute="leading" secondItem="tdo-iL-mLa" secondAttribute="leading" constant="30" id="tPd-DI-OKt"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="1월 30일 일기" id="3Vi-ah-eXf">
+                    <navigationItem key="navigationItem" id="3Vi-ah-eXf">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="DS9-pL-GeZ">
                             <connections>
                                 <action selector="doneButtonTouched:" destination="xht-ee-KIh" id="Imk-Lx-jQu"/>
