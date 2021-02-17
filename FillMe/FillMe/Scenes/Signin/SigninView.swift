@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SigninView: UIView {
+final class SigninView: UIView {
     
     //MARK:- IBOutlets
     @IBOutlet var contentView: UIView!

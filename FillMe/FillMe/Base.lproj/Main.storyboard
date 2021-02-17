@@ -283,7 +283,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nWh-iL-51Z">
-                                <rect key="frame" x="181" y="94" width="52" height="30"/>
+                                <rect key="frame" x="181" y="733" width="52" height="30"/>
                                 <state key="normal" title="로그아웃"/>
                                 <connections>
                                     <action selector="logoutButtonTouched:" destination="wUV-B0-r6E" eventType="touchUpInside" id="FUN-e2-gdC"/>
@@ -293,7 +293,7 @@
                         <viewLayoutGuide key="safeArea" id="kjL-yf-lq6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="nWh-iL-51Z" firstAttribute="top" secondItem="kjL-yf-lq6" secondAttribute="top" constant="50" id="Y6N-67-Qvk"/>
+                            <constraint firstItem="kjL-yf-lq6" firstAttribute="bottom" secondItem="nWh-iL-51Z" secondAttribute="bottom" constant="50" id="5Ia-Gj-bvN"/>
                             <constraint firstItem="tNX-1l-UVN" firstAttribute="centerY" secondItem="KQh-fR-LCv" secondAttribute="centerY" id="ZhA-uW-xTK"/>
                             <constraint firstItem="tNX-1l-UVN" firstAttribute="centerX" secondItem="KQh-fR-LCv" secondAttribute="centerX" id="cYO-b2-SU4"/>
                             <constraint firstItem="nWh-iL-51Z" firstAttribute="centerX" secondItem="KQh-fR-LCv" secondAttribute="centerX" id="dSt-j2-RW2"/>
@@ -306,7 +306,7 @@
             </objects>
             <point key="canvasLocation" x="4893" y="1542"/>
         </scene>
-        <!--1월 30일 일기-->
+        <!--Write Diary View Controller-->
         <scene sceneID="cnx-Sc-h2f">
             <objects>
                 <viewController id="xht-ee-KIh" customClass="WriteDiaryViewController" customModule="FillMe" customModuleProvider="target" sceneMemberID="viewController">
@@ -328,10 +328,6 @@
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yiI-Yx-TKp">
-                                <rect key="frame" x="30" y="381.5" width="354" height="30"/>
-                                <state key="normal" title="기록 완료"/>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lGE-xJ-HC1">
                                 <rect key="frame" x="50" y="180.5" width="314" height="1"/>
                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
@@ -357,7 +353,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="TK2-0a-YFZ">
-                                <rect key="frame" x="2" y="431.5" width="382" height="31"/>
+                                <rect key="frame" x="2" y="397" width="382" height="31"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="공유하기" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2zU-Mw-agq">
                                         <rect key="frame" x="0.0" y="0.0" width="313" height="31"/>
@@ -376,14 +372,11 @@
                         <constraints>
                             <constraint firstItem="lGE-xJ-HC1" firstAttribute="top" secondItem="vn8-gM-Bkb" secondAttribute="bottom" constant="20" id="1MV-t0-Arl"/>
                             <constraint firstItem="tdo-iL-mLa" firstAttribute="trailing" secondItem="Ck4-Pi-EXM" secondAttribute="trailing" constant="30" id="8bQ-ei-zeF"/>
-                            <constraint firstItem="yiI-Yx-TKp" firstAttribute="top" secondItem="Ck4-Pi-EXM" secondAttribute="bottom" constant="40" id="96R-lo-Jyw"/>
                             <constraint firstItem="TK2-0a-YFZ" firstAttribute="leading" secondItem="tdo-iL-mLa" secondAttribute="leading" constant="2" id="Daw-xb-bAj"/>
+                            <constraint firstItem="TK2-0a-YFZ" firstAttribute="top" secondItem="A5k-dZ-FE2" secondAttribute="bottom" constant="20" id="GXP-B0-rkW"/>
                             <constraint firstItem="Ck4-Pi-EXM" firstAttribute="top" secondItem="lGE-xJ-HC1" secondAttribute="bottom" constant="10" id="H9G-Pk-dSJ"/>
                             <constraint firstItem="tdo-iL-mLa" firstAttribute="trailing" secondItem="TK2-0a-YFZ" secondAttribute="trailing" constant="30" id="IFa-po-Zxc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lGE-xJ-HC1" secondAttribute="trailing" constant="30" id="Nyg-dP-PYf"/>
-                            <constraint firstItem="yiI-Yx-TKp" firstAttribute="leading" secondItem="tdo-iL-mLa" secondAttribute="leading" constant="30" id="S6L-RH-xSK"/>
-                            <constraint firstItem="TK2-0a-YFZ" firstAttribute="top" secondItem="yiI-Yx-TKp" secondAttribute="bottom" constant="20" id="VuS-zt-HD9"/>
-                            <constraint firstItem="tdo-iL-mLa" firstAttribute="trailing" secondItem="yiI-Yx-TKp" secondAttribute="trailing" constant="30" id="XLv-b9-AOO"/>
                             <constraint firstItem="A5k-dZ-FE2" firstAttribute="top" secondItem="Ck4-Pi-EXM" secondAttribute="bottom" constant="15" id="fJi-mJ-mly"/>
                             <constraint firstItem="vn8-gM-Bkb" firstAttribute="leading" secondItem="tdo-iL-mLa" secondAttribute="leading" constant="30" id="g4D-ue-b4c"/>
                             <constraint firstItem="tdo-iL-mLa" firstAttribute="trailing" secondItem="A5k-dZ-FE2" secondAttribute="trailing" constant="30" id="gE9-HC-Tc6"/>
@@ -392,8 +385,19 @@
                             <constraint firstItem="Ck4-Pi-EXM" firstAttribute="leading" secondItem="tdo-iL-mLa" secondAttribute="leading" constant="30" id="tPd-DI-OKt"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="1월 30일 일기" id="3Vi-ah-eXf"/>
+                    <navigationItem key="navigationItem" id="3Vi-ah-eXf">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="DS9-pL-GeZ">
+                            <connections>
+                                <action selector="doneButtonTouched:" destination="xht-ee-KIh" id="Imk-Lx-jQu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="diaryContent" destination="Ck4-Pi-EXM" id="Ojk-Iz-hNO"/>
+                        <outlet property="diaryTitle" destination="vn8-gM-Bkb" id="nFk-HM-NVJ"/>
+                        <outlet property="shareEnable" destination="XpF-vT-Rtj" id="e9T-bQ-GD1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oWs-ES-JAn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

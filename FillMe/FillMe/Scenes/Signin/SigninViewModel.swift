@@ -10,7 +10,7 @@ import FirebaseFirestore
 import Firebase
 import Combine
 
-class SigninViewModel {
+final class SigninViewModel {
     
     private var usecase: SigninUseCaseType
     private var cancellables = [AnyCancellable]()
@@ -30,10 +30,10 @@ class SigninViewModel {
                     let documentData = self.createUserMetaData(uid: userUID, email: email)
                     self.registerUserInfo(id: userUID, documentData: documentData)
                 case .failure(let error):
+                    // error 처리하기
                     print("error: \(error.localizedDescription)")
                 }
             } receiveValue: { uid in
-                print("Account creation uid: \(uid)")
                 userUID = uid
             }
             .store(in: &cancellables)
@@ -41,15 +41,16 @@ class SigninViewModel {
     }
     
     private func registerUserInfo(id: String, documentData: MetaData) {
-        Firestore.firestore()
-            .collection("Users")
-            .document(id)
-            .setData(documentData) { error in
-                if let error = error { print(error) }
-                else {
-                    print("Registered!")
-                }
+        var success: Bool = false
+        
+        usecase.saveUserInfo(id: id, info: documentData)
+            .sink { _ in
+                // print보다는 좀 더 의미있는 액션을...
+                print("Register status: \(success)")
+            } receiveValue: { result in
+                success = result
             }
+            .store(in: &cancellables)
     }
     
     private func createUserMetaData(uid: String, email: String) -> MetaData {
