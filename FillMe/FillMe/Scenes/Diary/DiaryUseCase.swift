@@ -19,6 +19,7 @@ class DiaryUseCase {
     private let networkService: NetworkServiceType
     private var cancellables = [AnyCancellable]()
     private var id = Auth.auth().currentUser?.uid
+    private var today = DateFormatter().today
     
     init(networkService: NetworkServiceType = NetworkService()) {
         self.networkService = networkService
@@ -37,7 +38,7 @@ extension DiaryUseCase: DiaryUseCaseType {
         return Future<Bool, Error> { [weak self] promise in
             guard let self = self,
                   let id = self.id else { return }
-            self.networkService.saveDocument(collectionPath: "Diaries/2021-02-09/Users",
+            self.networkService.saveDocument(collectionPath: "Diaries/\(self.today)/Users",
                                         documentPath: id,
                                         data: metadata)
                 .sink { result in
