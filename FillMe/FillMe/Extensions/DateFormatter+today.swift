@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+extension DateFormatter {
+    var today: String {
+        self.dateFormat = "YY-MM-dd"
+        return self.string(from: Date())
+    }
+}
