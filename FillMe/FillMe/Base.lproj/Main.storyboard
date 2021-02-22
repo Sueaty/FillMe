@@ -276,7 +276,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNX-1l-UVN">
-                                <rect key="frame" x="181" y="433" width="52" height="30"/>
+                                <rect key="frame" x="181" y="763" width="52" height="30"/>
                                 <state key="normal" title="일기쓰기"/>
                                 <connections>
                                     <segue destination="xht-ee-KIh" kind="push" id="Vbo-2w-nNE"/>
@@ -294,9 +294,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="kjL-yf-lq6" firstAttribute="bottom" secondItem="nWh-iL-51Z" secondAttribute="bottom" constant="50" id="5Ia-Gj-bvN"/>
-                            <constraint firstItem="tNX-1l-UVN" firstAttribute="centerY" secondItem="KQh-fR-LCv" secondAttribute="centerY" id="ZhA-uW-xTK"/>
-                            <constraint firstItem="tNX-1l-UVN" firstAttribute="centerX" secondItem="KQh-fR-LCv" secondAttribute="centerX" id="cYO-b2-SU4"/>
+                            <constraint firstItem="tNX-1l-UVN" firstAttribute="centerX" secondItem="KQh-fR-LCv" secondAttribute="centerX" id="H16-hq-fLD"/>
                             <constraint firstItem="nWh-iL-51Z" firstAttribute="centerX" secondItem="KQh-fR-LCv" secondAttribute="centerX" id="dSt-j2-RW2"/>
+                            <constraint firstItem="kjL-yf-lq6" firstAttribute="bottom" secondItem="tNX-1l-UVN" secondAttribute="bottom" constant="20" id="ixC-6a-YRz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ocf-29-4Hk"/>
