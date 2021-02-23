@@ -14,4 +14,10 @@ extension DateFormatter {
         return self.string(from: Date())
     }
     
+    func currentCalendarTitle(baseDate: Date) -> String {
+        self.calendar = Calendar(identifier: .gregorian)
+        self.locale = Locale.autoupdatingCurrent
+        self.setLocalizedDateFormatFromTemplate("MMMM y")
+        return self.string(from: baseDate)
+    }
 }
