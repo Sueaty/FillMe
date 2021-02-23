@@ -33,6 +33,7 @@
 		806417CF25C2FDA100AED97C /* SigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806417CE25C2FDA100AED97C /* SigninView.swift */; };
 		806417D225C3024A00AED97C /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806417D125C3024A00AED97C /* SigninViewController.swift */; };
 		806417D725C31E0900AED97C /* WriteDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806417D625C31E0900AED97C /* WriteDiaryViewController.swift */; };
+		80931B4025E4FE6F00FCBE4E /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80931B3F25E4FE6F00FCBE4E /* CalendarHeaderView.swift */; };
 		80E8F02A25DCF23100265E69 /* DateFormatter+today.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E8F02925DCF23100265E69 /* DateFormatter+today.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		806417CE25C2FDA100AED97C /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
 		806417D125C3024A00AED97C /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
 		806417D625C31E0900AED97C /* WriteDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDiaryViewController.swift; sourceTree = "<group>"; };
+		80931B3F25E4FE6F00FCBE4E /* CalendarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeaderView.swift; sourceTree = "<group>"; };
 		80E8F02925DCF23100265E69 /* DateFormatter+today.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+today.swift"; sourceTree = "<group>"; };
 		8E816E60A9EA34A77E19732F /* Pods-FillMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FillMe.release.xcconfig"; path = "Target Support Files/Pods-FillMe/Pods-FillMe.release.xcconfig"; sourceTree = "<group>"; };
 		AC868F18E0F58C1F2A544750 /* Pods_FillMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FillMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				806417BE25C1EB4600AED97C /* HomeViewController.swift */,
+				80931B3F25E4FE6F00FCBE4E /* CalendarHeaderView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				8003DDC625C6BABB001C7A64 /* ModelCollection.swift in Sources */,
 				806417D225C3024A00AED97C /* SigninViewController.swift in Sources */,
 				80E8F02A25DCF23100265E69 /* DateFormatter+today.swift in Sources */,
+				80931B4025E4FE6F00FCBE4E /* CalendarHeaderView.swift in Sources */,
 				806417BF25C1EB4600AED97C /* HomeViewController.swift in Sources */,
 				806417C825C298E100AED97C /* ProfileTableViewController.swift in Sources */,
 				804B156025BF330200AA736F /* SceneDelegate.swift in Sources */,

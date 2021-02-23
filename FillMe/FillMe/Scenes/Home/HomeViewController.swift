@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController {
     
     //MARK:- Views
     private lazy var collectionView: UICollectionView = {
@@ -22,17 +22,20 @@ class HomeViewController: UIViewController {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
     }()
+    
+    private lazy var headerView = CalendarHeaderView()
 
     // TO DO:
-        // define header & footer view
+        // define footer view
     
+
     //MARK:- View Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        collectionView.backgroundColor = .black
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.isHidden = true
-        
-        
         
         if let user = Auth.auth().currentUser {
             // do something
@@ -42,9 +45,9 @@ class HomeViewController: UIViewController {
             print("User should login")
         }
         
-        collectionView.backgroundColor = .black
         // add subviews
         view.addSubview(collectionView)
+        view.addSubview(headerView)
         
         // constraints
         var constraints = [NSLayoutConstraint]()
@@ -54,9 +57,15 @@ class HomeViewController: UIViewController {
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor,
                                                      constant: -10),
             collectionView.topAnchor.constraint(equalTo: view.readableContentGuide.topAnchor,
-                                                constant: 10),
+                                                constant: 100),
             collectionView.heightAnchor.constraint(equalTo: view.readableContentGuide.heightAnchor,
                                                    multiplier: 0.5)
+        ])
+        constraints.append(contentsOf: [
+            headerView.leadingAnchor.constraint(equalTo: collectionView.leadingAnchor),
+            headerView.trailingAnchor.constraint(equalTo: collectionView.trailingAnchor),
+            headerView.bottomAnchor.constraint(equalTo: collectionView.topAnchor),
+            headerView.heightAnchor.constraint(equalToConstant: 85)
         ])
         
         NSLayoutConstraint.activate(constraints)
@@ -71,6 +80,5 @@ class HomeViewController: UIViewController {
             print ("Error signing out: %@", signOutError)
         }
     }
-    
 
 }

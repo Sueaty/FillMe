@@ -21,7 +21,10 @@ final class WriteDiaryViewController: UIViewController {
     //MARK:- Initializer
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "\(todayDate) 일기"
+        navigationController?.navigationBar.isHidden = false
+        navigationItem.largeTitleDisplayMode = .automatic
+        navigationController?.navigationBar.prefersLargeTitles = true
+        title = "Write"
     }
     
     //MARK:- IBActions
@@ -35,6 +38,11 @@ final class WriteDiaryViewController: UIViewController {
                               share: share)
             viewModel.saveDiary(diary: diary)
         }
+    }
+    
+    @IBAction func cancelButtonTouched(_ sender: UIBarButtonItem) {
+        navigationController?.navigationBar.isHidden = true
+        navigationController?.popViewController(animated: true)
     }
     
 }
