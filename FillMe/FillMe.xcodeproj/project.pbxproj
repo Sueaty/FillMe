@@ -24,6 +24,7 @@
 		804B159C25C0964500AA736F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804B159B25C0964500AA736F /* ProfileViewController.swift */; };
 		804B15A825C09A0600AA736F /* NameImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804B15A725C09A0600AA736F /* NameImageView.swift */; };
 		804B15AB25C09A1000AA736F /* NameImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 804B15AA25C09A1000AA736F /* NameImageView.xib */; };
+		8056956225E61449002C709C /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8056956125E61449002C709C /* CalendarCollectionViewCell.swift */; };
 		806417B425C1DB1600AED97C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806417B325C1DB1600AED97C /* LoginViewController.swift */; };
 		806417B825C1E34700AED97C /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 806417B725C1E34700AED97C /* LoginView.xib */; };
 		806417BB25C1E5B700AED97C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806417BA25C1E5B700AED97C /* LoginView.swift */; };
@@ -56,6 +57,7 @@
 		804B159B25C0964500AA736F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		804B15A725C09A0600AA736F /* NameImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameImageView.swift; sourceTree = "<group>"; };
 		804B15AA25C09A1000AA736F /* NameImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NameImageView.xib; sourceTree = "<group>"; };
+		8056956125E61449002C709C /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
 		806417B325C1DB1600AED97C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		806417B725C1E34700AED97C /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		806417BA25C1E5B700AED97C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 			children = (
 				806417BE25C1EB4600AED97C /* HomeViewController.swift */,
 				80931B3F25E4FE6F00FCBE4E /* CalendarHeaderView.swift */,
+				8056956125E61449002C709C /* CalendarCollectionViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				80E8F02A25DCF23100265E69 /* DateFormatter+today.swift in Sources */,
 				80931B4025E4FE6F00FCBE4E /* CalendarHeaderView.swift in Sources */,
 				806417BF25C1EB4600AED97C /* HomeViewController.swift in Sources */,
+				8056956225E61449002C709C /* CalendarCollectionViewCell.swift in Sources */,
 				806417C825C298E100AED97C /* ProfileTableViewController.swift in Sources */,
 				804B156025BF330200AA736F /* SceneDelegate.swift in Sources */,
 				8003DD9A25C40499001C7A64 /* NetworkService.swift in Sources */,
