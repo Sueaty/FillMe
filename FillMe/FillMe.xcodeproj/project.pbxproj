@@ -11,7 +11,7 @@
 		8003DD9625C402F0001C7A64 /* DiaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8003DD9525C402F0001C7A64 /* DiaryViewModel.swift */; };
 		8003DD9A25C40499001C7A64 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8003DD9925C40499001C7A64 /* NetworkService.swift */; };
 		8003DD9D25C404BF001C7A64 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8003DD9C25C404BF001C7A64 /* Errors.swift */; };
-		8003DDC625C6BABB001C7A64 /* ModelCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8003DDC525C6BABB001C7A64 /* ModelCollection.swift */; };
+		8003DDC625C6BABB001C7A64 /* CalendarModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8003DDC525C6BABB001C7A64 /* CalendarModels.swift */; };
 		8003DDCA25C6BADD001C7A64 /* SigninUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8003DDC925C6BADD001C7A64 /* SigninUseCase.swift */; };
 		8003DDCD25C6BB14001C7A64 /* SigninViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8003DDCC25C6BB14001C7A64 /* SigninViewModel.swift */; };
 		801175AB25D28BA300FB400F /* DiaryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801175AA25D28BA300FB400F /* DiaryUseCase.swift */; };
@@ -25,6 +25,8 @@
 		804B15A825C09A0600AA736F /* NameImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804B15A725C09A0600AA736F /* NameImageView.swift */; };
 		804B15AB25C09A1000AA736F /* NameImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 804B15AA25C09A1000AA736F /* NameImageView.xib */; };
 		8056956225E61449002C709C /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8056956125E61449002C709C /* CalendarCollectionViewCell.swift */; };
+		8056956525E62762002C709C /* UserModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8056956425E62762002C709C /* UserModels.swift */; };
+		8056956825E6276A002C709C /* DiaryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8056956725E6276A002C709C /* DiaryModels.swift */; };
 		806417B425C1DB1600AED97C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806417B325C1DB1600AED97C /* LoginViewController.swift */; };
 		806417B825C1E34700AED97C /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 806417B725C1E34700AED97C /* LoginView.xib */; };
 		806417BB25C1E5B700AED97C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806417BA25C1E5B700AED97C /* LoginView.swift */; };
@@ -42,7 +44,7 @@
 		8003DD9525C402F0001C7A64 /* DiaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewModel.swift; sourceTree = "<group>"; };
 		8003DD9925C40499001C7A64 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		8003DD9C25C404BF001C7A64 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
-		8003DDC525C6BABB001C7A64 /* ModelCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCollection.swift; sourceTree = "<group>"; };
+		8003DDC525C6BABB001C7A64 /* CalendarModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarModels.swift; sourceTree = "<group>"; };
 		8003DDC925C6BADD001C7A64 /* SigninUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninUseCase.swift; sourceTree = "<group>"; };
 		8003DDCC25C6BB14001C7A64 /* SigninViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewModel.swift; sourceTree = "<group>"; };
 		801175AA25D28BA300FB400F /* DiaryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryUseCase.swift; sourceTree = "<group>"; };
@@ -58,6 +60,8 @@
 		804B15A725C09A0600AA736F /* NameImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameImageView.swift; sourceTree = "<group>"; };
 		804B15AA25C09A1000AA736F /* NameImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NameImageView.xib; sourceTree = "<group>"; };
 		8056956125E61449002C709C /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
+		8056956425E62762002C709C /* UserModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModels.swift; sourceTree = "<group>"; };
+		8056956725E6276A002C709C /* DiaryModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryModels.swift; sourceTree = "<group>"; };
 		806417B325C1DB1600AED97C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		806417B725C1E34700AED97C /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		806417BA25C1E5B700AED97C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -117,7 +121,9 @@
 		8003DDC425C6BAAA001C7A64 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8003DDC525C6BABB001C7A64 /* ModelCollection.swift */,
+				8003DDC525C6BABB001C7A64 /* CalendarModels.swift */,
+				8056956425E62762002C709C /* UserModels.swift */,
+				8056956725E6276A002C709C /* DiaryModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -373,8 +379,10 @@
 				8003DD9D25C404BF001C7A64 /* Errors.swift in Sources */,
 				8003DDCD25C6BB14001C7A64 /* SigninViewModel.swift in Sources */,
 				806417B425C1DB1600AED97C /* LoginViewController.swift in Sources */,
-				8003DDC625C6BABB001C7A64 /* ModelCollection.swift in Sources */,
+				8003DDC625C6BABB001C7A64 /* CalendarModels.swift in Sources */,
 				806417D225C3024A00AED97C /* SigninViewController.swift in Sources */,
+				8056956525E62762002C709C /* UserModels.swift in Sources */,
+				8056956825E6276A002C709C /* DiaryModels.swift in Sources */,
 				80E8F02A25DCF23100265E69 /* DateFormatter+today.swift in Sources */,
 				80931B4025E4FE6F00FCBE4E /* CalendarHeaderView.swift in Sources */,
 				806417BF25C1EB4600AED97C /* HomeViewController.swift in Sources */,

@@ -39,7 +39,7 @@ final class CalendarHeaderView: UIView {
         }
     }
     
-    //MARK:- Initializer
+    //MARK:- Initializers
     init() {
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false

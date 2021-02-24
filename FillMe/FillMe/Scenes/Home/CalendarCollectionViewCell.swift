@@ -7,9 +7,9 @@
 
 import UIKit
 
-class CalendarCollectionViewCell: UICollectionViewCell {
+final class CalendarCollectionViewCell: UICollectionViewCell {
     
-    // red circle that appears when the user selects this cell (when there’s room to display it)
+    //MARK:- Views
     private lazy var selectionBackgroundView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -18,7 +18,6 @@ class CalendarCollectionViewCell: UICollectionViewCell {
         return view
     }()
     
-    // displays the day of the month for this cell
     private lazy var numberLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -28,28 +27,20 @@ class CalendarCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    private lazy var accessibilityDateFormatter: DateFormatter = {
-        let dateFormatter = DateFormatter()
-        dateFormatter.calendar = Calendar(identifier: .gregorian)
-        dateFormatter.setLocalizedDateFormatFromTemplate("EEEE, MMMM d")
-        return dateFormatter
-    }()
-    
+    //MARK:- Properties
     static let reuseIdentifier = String(describing: CalendarCollectionViewCell.self)
+    
     var day: Day? {
         didSet {
             guard let day = day else { return }
             numberLabel.text = day.number
-            accessibilityLabel = accessibilityDateFormatter.string(from: day.date)
             updateSelectionStatus()
         }
     }
     
+    //MARK:- Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        isAccessibilityElement = true
-        accessibilityTraits = .button
         contentView.addSubview(selectionBackgroundView)
         contentView.addSubview(numberLabel)
     }
@@ -60,17 +51,12 @@ class CalendarCollectionViewCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        // This allows for rotations and trait collection changes (ex. entering split view on iPad) to update constraints correctly.
-        // Removing old constraints allows for new ones to be created regardless of the values of the old ones
+        
         NSLayoutConstraint.deactivate(selectionBackgroundView.constraints)
         
-        // Calculate the width and height based on the device’s horizontal size class.
-        // If the device is horizontally compact, you use the full size of the cell while subtracting 10 (up to a limit of 60) to ensure the circle doesn’t stretch to the edge of the cell bounds.
-        // For non-compact devices, you use a static 45 x 45 size.
         let size = traitCollection.horizontalSizeClass == .compact ?
             min(min(frame.width, frame.height) - 10, 60) : 45
-        
-        // 2
+
         NSLayoutConstraint.activate([
             numberLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             numberLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
@@ -93,7 +79,7 @@ class CalendarCollectionViewCell: UICollectionViewCell {
 
 // MARK: - Appearance
 private extension CalendarCollectionViewCell {
-    // 1
+
     func updateSelectionStatus() {
         guard let day = day else { return }
         
@@ -104,7 +90,6 @@ private extension CalendarCollectionViewCell {
         }
     }
     
-    // 2
     var isSmallScreenSize: Bool {
         let isCompact = traitCollection.horizontalSizeClass == .compact
         let smallWidth = UIScreen.main.bounds.width <= 350
@@ -114,21 +99,14 @@ private extension CalendarCollectionViewCell {
         return isCompact && (smallWidth || widthGreaterThanHeight)
     }
     
-    // 3
     func applySelectedStyle() {
-        accessibilityTraits.insert(.selected)
-        accessibilityHint = nil
-        
         numberLabel.textColor = isSmallScreenSize ? .systemRed : .white
         selectionBackgroundView.isHidden = isSmallScreenSize
     }
     
-    // 4
     func applyDefaultStyle(isWithinDisplayedMonth: Bool) {
-        accessibilityTraits.remove(.selected)
-        accessibilityHint = "Tap to select"
-        
         numberLabel.textColor = isWithinDisplayedMonth ? .label : .secondaryLabel
         selectionBackgroundView.isHidden = true
     }
+    
 }
