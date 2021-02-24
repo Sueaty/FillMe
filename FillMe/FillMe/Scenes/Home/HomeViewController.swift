@@ -60,7 +60,6 @@ final class HomeViewController: UIViewController {
         collectionView.addGestureRecognizer(swipeRight)
         collectionView.addGestureRecognizer(swipeLeft)
         
-        
         collectionView.backgroundColor = .systemBackground
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.isHidden = true
@@ -193,6 +192,7 @@ private extension HomeViewController {
                         for: lastDayInMonth,
                         isWithinDisplayedMonth: false)
         }
+        
         return days
     }
     
@@ -212,7 +212,6 @@ extension HomeViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: CalendarCollectionViewCell.reuseIdentifier,
             for: indexPath) as! CalendarCollectionViewCell
-        
         cell.day = day
         return cell
     }
@@ -227,8 +226,11 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let width = Int(collectionView.frame.width / 7)
-        let height = Int(collectionView.frame.height) / numberOfWeeksInBaseDate
-        return CGSize(width: width, height: height)
+        // let height = Int(collectionView.frame.height) / numberOfWeeksInBaseDate
+        return CGSize(width: width, height: width)
+        
+        // memo: CGSize(width: width, height: width) => 달력 크기는 다르지만 cell은 정사각형
+        //       CGSize(width: width, height: height) => 달력 크기는 같지만 cell이 달라짐
     }
     
     func collectionView(_ collectionView: UICollectionView,

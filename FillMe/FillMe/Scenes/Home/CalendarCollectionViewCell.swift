@@ -60,7 +60,6 @@ final class CalendarCollectionViewCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             numberLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             numberLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            
             selectionBackgroundView.centerYAnchor.constraint(equalTo: numberLabel.centerYAnchor),
             selectionBackgroundView.centerXAnchor.constraint(equalTo: numberLabel.centerXAnchor),
             selectionBackgroundView.widthAnchor.constraint(equalToConstant: size),
@@ -82,7 +81,9 @@ private extension CalendarCollectionViewCell {
 
     func updateSelectionStatus() {
         guard let day = day else { return }
-        
+        if day.number == "1" {
+            backgroundColor = .red
+        }
         if day.isSelected {
             applySelectedStyle()
         } else {
