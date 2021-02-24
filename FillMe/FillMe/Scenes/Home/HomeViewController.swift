@@ -50,6 +50,17 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let swipeRight = UISwipeGestureRecognizer(target: self,
+                                                  action: #selector(respondToSwipeGesture(_:)))
+        let swipeLeft = UISwipeGestureRecognizer(target: self,
+                                                 action: #selector(respondToSwipeGesture(_:)))
+        
+        swipeRight.direction = .right
+        swipeLeft.direction = .left
+        collectionView.addGestureRecognizer(swipeRight)
+        collectionView.addGestureRecognizer(swipeLeft)
+        
+        
         collectionView.backgroundColor = .systemBackground
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.isHidden = true
@@ -93,6 +104,17 @@ final class HomeViewController: UIViewController {
                                 forCellWithReuseIdentifier: CalendarCollectionViewCell.reuseIdentifier)
         collectionView.dataSource = self
         collectionView.delegate = self
+    }
+    
+    @objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer) {
+        guard let gesture = gesture as? UISwipeGestureRecognizer else { return }
+        switch gesture.direction {
+        case .left:
+            baseDate = calendar.date(byAdding: .month, value: 1, to: baseDate) ?? baseDate
+        default:
+            baseDate = calendar.date(byAdding: .month, value: -1, to: baseDate) ?? baseDate
+        }
+
     }
     
     //MARK:- IBActions
