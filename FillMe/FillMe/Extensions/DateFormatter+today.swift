@@ -21,9 +21,9 @@ extension DateFormatter {
         return self.string(from: baseDate)
     }
     
-    var dayLabel: String {
+    func generateDayLabel(date: Date) -> String {
         self.dateFormat = "d"
-        return self.string(from: Date())
+        return self.string(from: date)
     }
     
 }

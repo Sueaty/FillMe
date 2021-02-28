@@ -82,13 +82,12 @@ private extension CalendarCollectionViewCell {
     func updateSelectionStatus() {
         guard let day = day else { return }
         if day.number == "1" {
-            backgroundColor = .red
-        }
-        if day.isSelected {
             applySelectedStyle()
         } else {
             applyDefaultStyle(isWithinDisplayedMonth: day.isWithinDisplayedMonth)
         }
+        
+        // if day.isSelected { ... } else { ... }
     }
     
     var isSmallScreenSize: Bool {

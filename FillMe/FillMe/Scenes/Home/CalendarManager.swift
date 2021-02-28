@@ -14,23 +14,23 @@ final class CalendarManager {
         case daysInMonthGeneration
     }
     
-    private let calendar = Calendar(identifier: .gregorian)
+    let calendar = Calendar(identifier: .gregorian)
     private var selectedDate = Date()
-    private var baseDate = Date() {
+    var baseDate = Date() {
         didSet {
             days = generateDaysInMonth(for: baseDate)
         }
     }
-    private lazy var days = generateDaysInMonth(for: baseDate)
+    lazy var days = generateDaysInMonth(for: baseDate)
     private var numberofWeeksInBaseDate: Int {
         calendar.range(of: .weekOfMonth, in: .month, for: baseDate)?.count ?? 0
     }
     
 }
 
-private extension CalendarManager {
+extension CalendarManager {
     
-    func monthMetadata(for baseDate: Date) throws -> MonthMetadata {
+    private func monthMetadata(for baseDate: Date) throws -> MonthMetadata {
         guard let numberofDaysInMonth = calendar.range(of: .day, in: .month, for: baseDate)?.count,
               let firstDayOfMonth = calendar.date(from: calendar.dateComponents([.year, .month],
                                                                                 from: baseDate)) else {
@@ -65,15 +65,14 @@ private extension CalendarManager {
         return days
     }
     
-    func generateDay(offsetBy dayOffset: Int, for baseDate: Date, isWithinDisplayedMonth: Bool) -> Day {
+    private func generateDay(offsetBy dayOffset: Int, for baseDate: Date, isWithinDisplayedMonth: Bool) -> Day {
         let date = calendar.date(byAdding: .day, value: dayOffset, to: baseDate) ?? baseDate
         return Day(date: date,
-                   number: DateFormatter().dayLabel,
-                   isSelected: calendar.isDate(date, inSameDayAs: selectedDate),
+                   number: DateFormatter().generateDayLabel(date: date),
                    isWithinDisplayedMonth: isWithinDisplayedMonth)
     }
     
-    func generateStartOfNextMonth(using firstDayOfDisplayedMonth: Date) -> [Day] {
+    private func generateStartOfNextMonth(using firstDayOfDisplayedMonth: Date) -> [Day] {
         guard let lastDayInMonth = calendar.date(byAdding: DateComponents(month: 1, day: -1),
                                                  to: firstDayOfDisplayedMonth) else {
             return []
@@ -92,4 +91,5 @@ private extension CalendarManager {
         
         return days
     }
+    
 }

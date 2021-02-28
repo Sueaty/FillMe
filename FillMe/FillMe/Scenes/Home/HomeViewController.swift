@@ -25,27 +25,9 @@ final class HomeViewController: UIViewController {
     
     private lazy var headerView = CalendarHeaderView()
     
-    //MARK:- Calendar date values
-    private var selectedDate = Date()
-    private var baseDate = Date() {
-        didSet {
-            days = generateDaysInMonth(for: baseDate)
-            collectionView.reloadData()
-            headerView.baseDate = baseDate
-        }
-    }
-    private lazy var days = generateDaysInMonth(for: baseDate) // month's data of the baseDate
-    private var numberOfWeeksInBaseDate: Int {
-        calendar.range(of: .weekOfMonth, in: .month, for: baseDate)?.count ?? 0
-    }
-    private let calendar = Calendar(identifier: .gregorian)
-    
-    private lazy var dateFormatter: DateFormatter = {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "d"
-        return dateFormatter
-    }()
-    
+    //MARK:- Properties
+    private let calendarManager = CalendarManager()
+
     //MARK:- View Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +46,7 @@ final class HomeViewController: UIViewController {
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.isHidden = true
         
-        headerView.baseDate = baseDate
+        headerView.baseDate = calendarManager.baseDate
         
         if let user = Auth.auth().currentUser {
             // do something
@@ -109,11 +91,24 @@ final class HomeViewController: UIViewController {
         guard let gesture = gesture as? UISwipeGestureRecognizer else { return }
         switch gesture.direction {
         case .left:
-            baseDate = calendar.date(byAdding: .month, value: 1, to: baseDate) ?? baseDate
+            calendarManager.baseDate
+                = calendarManager.calendar.date(byAdding: .month,
+                                                value: 1,
+                                                to: calendarManager.baseDate) ?? calendarManager.baseDate
         default:
-            baseDate = calendar.date(byAdding: .month, value: -1, to: baseDate) ?? baseDate
+            calendarManager.baseDate
+                = calendarManager.calendar.date(byAdding: .month,
+                                                value: -1,
+                                                to: calendarManager.baseDate) ?? calendarManager.baseDate
         }
-
+        updateCalendar()
+    }
+    
+    private func updateCalendar() {
+        let baseDate = calendarManager.baseDate
+        calendarManager.days = calendarManager.generateDaysInMonth(for: baseDate)
+        collectionView.reloadData()
+        headerView.baseDate = baseDate
     }
     
     //MARK:- IBActions
@@ -127,88 +122,17 @@ final class HomeViewController: UIViewController {
 
 }
 
-// MARK:- Day Generation
-private extension HomeViewController {
-    
-    enum CalendarDateError: Error {
-        case metadataGeneration
-    }
-    
-    func monthMetadata(for baseDate: Date) throws -> MonthMetadata {
-        guard let numberOfDaysInMonth = calendar.range(of: .day, in: .month, for: baseDate)?.count,
-              let firstDayOfMonth = calendar.date(from: calendar.dateComponents([.year, .month],
-                                                                                from: baseDate)) else {
-            throw CalendarDateError.metadataGeneration
-        }
-        let firstDayWeekday = calendar.component(.weekday, from: firstDayOfMonth)
-        return MonthMetadata(numberOfDays: numberOfDaysInMonth,
-                             firstDay: firstDayOfMonth,
-                             firstDayWeekday: firstDayWeekday)
-    }
-    
-    func generateDaysInMonth(for baseDate: Date) -> [Day] {
-        guard let metadata = try? monthMetadata(for: baseDate) else {
-            fatalError("An error occurred when generating the metadata for \(baseDate)")
-        }
-        
-        let numberOfDaysInMonth = metadata.numberOfDays
-        let offsetInInitialRow = metadata.firstDayWeekday
-        let firstDayOfMonth = metadata.firstDay
-
-        var days: [Day] = (1..<(numberOfDaysInMonth + offsetInInitialRow)).map { day in
-            let isWithinDisplayedMonth = day >= offsetInInitialRow
-            let dayOffset
-                = isWithinDisplayedMonth ? day - offsetInInitialRow : -(offsetInInitialRow - day)
-            return generateDay(offsetBy: dayOffset,
-                               for: firstDayOfMonth,
-                               isWithinDisplayedMonth: isWithinDisplayedMonth)
-        }
-        
-        days += generateStartOfNextMonth(using: firstDayOfMonth)
-        return days
-    }
-    
-    func generateDay(offsetBy dayOffset: Int, for baseDate: Date, isWithinDisplayedMonth: Bool) -> Day {
-        let date = calendar.date(byAdding: .day, value: dayOffset, to: baseDate) ?? baseDate
-        return Day(date: date,
-                   number: dateFormatter.string(from: date),
-                   isSelected: calendar.isDate(date, inSameDayAs: selectedDate),
-                   isWithinDisplayedMonth: isWithinDisplayedMonth)
-    }
-    
-    func generateStartOfNextMonth(using firstDayOfDisplayedMonth: Date) -> [Day] {
-        guard let lastDayInMonth = calendar.date(byAdding: DateComponents(month: 1, day: -1),
-                                                 to: firstDayOfDisplayedMonth) else {
-            return []
-        }
-        
-        let additionalDays = 7 - calendar.component(.weekday, from: lastDayInMonth)
-        guard additionalDays > 0 else {
-            return []
-        }
-        
-        let days: [Day] = (1...additionalDays).map {
-            generateDay(offsetBy: $0,
-                        for: lastDayInMonth,
-                        isWithinDisplayedMonth: false)
-        }
-        
-        return days
-    }
-    
-}
-
 // MARK: - UICollectionViewDataSource
 extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        days.count
+        calendarManager.days.count
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let day = days[indexPath.row]
+        let day = calendarManager.days[indexPath.row]
         let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: CalendarCollectionViewCell.reuseIdentifier,
             for: indexPath) as! CalendarCollectionViewCell
@@ -236,7 +160,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
         
-        let day = days[indexPath.row]
+        let day = calendarManager.days[indexPath.row]
         // TO DO:
             // navigate to 'WriteDiaryVC' so that user can fill the diary for that day
             // of course, it must be disable if selected date is in the future
