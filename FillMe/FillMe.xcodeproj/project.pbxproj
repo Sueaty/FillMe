@@ -27,6 +27,7 @@
 		8056956225E61449002C709C /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8056956125E61449002C709C /* CalendarCollectionViewCell.swift */; };
 		8056956525E62762002C709C /* UserModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8056956425E62762002C709C /* UserModels.swift */; };
 		8056956825E6276A002C709C /* DiaryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8056956725E6276A002C709C /* DiaryModels.swift */; };
+		8056956C25E63659002C709C /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8056956B25E63659002C709C /* CalendarManager.swift */; };
 		806417B425C1DB1600AED97C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806417B325C1DB1600AED97C /* LoginViewController.swift */; };
 		806417B825C1E34700AED97C /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 806417B725C1E34700AED97C /* LoginView.xib */; };
 		806417BB25C1E5B700AED97C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806417BA25C1E5B700AED97C /* LoginView.swift */; };
@@ -62,6 +63,7 @@
 		8056956125E61449002C709C /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
 		8056956425E62762002C709C /* UserModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModels.swift; sourceTree = "<group>"; };
 		8056956725E6276A002C709C /* DiaryModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryModels.swift; sourceTree = "<group>"; };
+		8056956B25E63659002C709C /* CalendarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
 		806417B325C1DB1600AED97C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		806417B725C1E34700AED97C /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		806417BA25C1E5B700AED97C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				806417BE25C1EB4600AED97C /* HomeViewController.swift */,
 				80931B3F25E4FE6F00FCBE4E /* CalendarHeaderView.swift */,
 				8056956125E61449002C709C /* CalendarCollectionViewCell.swift */,
+				8056956B25E63659002C709C /* CalendarManager.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				806417C825C298E100AED97C /* ProfileTableViewController.swift in Sources */,
 				804B156025BF330200AA736F /* SceneDelegate.swift in Sources */,
 				8003DD9A25C40499001C7A64 /* NetworkService.swift in Sources */,
+				8056956C25E63659002C709C /* CalendarManager.swift in Sources */,
 				806417D725C31E0900AED97C /* WriteDiaryViewController.swift in Sources */,
 				8003DDCA25C6BADD001C7A64 /* SigninUseCase.swift in Sources */,
 			);

@@ -20,4 +20,10 @@ extension DateFormatter {
         self.setLocalizedDateFormatFromTemplate("MMMM y")
         return self.string(from: baseDate)
     }
+    
+    var dayLabel: String {
+        self.dateFormat = "d"
+        return self.string(from: Date())
+    }
+    
 }
