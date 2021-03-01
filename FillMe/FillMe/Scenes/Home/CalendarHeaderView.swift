@@ -71,7 +71,7 @@ final class CalendarHeaderView: UIView {
     
     private func dayOfWeekLetter(for dayNumber: Int) -> String {
         switch dayNumber {
-        case 1: return "Sat"
+        case 1: return "Sun"
         case 2: return "Mon"
         case 3: return "Tue"
         case 4: return "Wed"

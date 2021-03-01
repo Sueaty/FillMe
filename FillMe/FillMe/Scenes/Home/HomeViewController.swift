@@ -44,7 +44,7 @@ final class HomeViewController: UIViewController {
         
         collectionView.backgroundColor = .systemBackground
         view.backgroundColor = .systemBackground
-        navigationController?.navigationBar.isHidden = true
+//        navigationController?.navigationBar.isHidden = true
         
         headerView.baseDate = calendarManager.baseDate
         
@@ -85,6 +85,12 @@ final class HomeViewController: UIViewController {
                                 forCellWithReuseIdentifier: CalendarCollectionViewCell.reuseIdentifier)
         collectionView.dataSource = self
         collectionView.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+        
     }
     
     @objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer) {
@@ -160,7 +166,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
         
-        let day = calendarManager.days[indexPath.row]
+        let day = calendarManager.days[indexPath.item]
         // TO DO:
             // navigate to 'WriteDiaryVC' so that user can fill the diary for that day
             // of course, it must be disable if selected date is in the future
