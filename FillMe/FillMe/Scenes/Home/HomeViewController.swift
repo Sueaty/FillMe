@@ -11,6 +11,12 @@ import Firebase
 final class HomeViewController: UIViewController {
     
     //MARK:- Views
+    private lazy var settingBarButton: UIBarButtonItem = {
+        let item = UIBarButtonItem()
+        item.image = UIImage(systemName: "gearshape.fill")
+        return item
+    }()
+    
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 0
@@ -31,6 +37,10 @@ final class HomeViewController: UIViewController {
     //MARK:- View Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.largeTitleDisplayMode = .always
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = DateFormatter().homeTitle
+        navigationItem.rightBarButtonItem = settingBarButton
         
         let swipeRight = UISwipeGestureRecognizer(target: self,
                                                   action: #selector(respondToSwipeGesture(_:)))
@@ -44,7 +54,6 @@ final class HomeViewController: UIViewController {
         
         collectionView.backgroundColor = .systemBackground
         view.backgroundColor = .systemBackground
-//        navigationController?.navigationBar.isHidden = true
         
         headerView.baseDate = calendarManager.baseDate
         
@@ -60,37 +69,22 @@ final class HomeViewController: UIViewController {
         view.addSubview(collectionView)
         view.addSubview(headerView)
         
-        // constraints
-        var constraints = [NSLayoutConstraint]()
-        constraints.append(contentsOf: [
-            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor,
-                                                    constant: 10),
-            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor,
-                                                     constant: -10),
-            collectionView.topAnchor.constraint(equalTo: view.readableContentGuide.topAnchor,
-                                                constant: 100),
-            collectionView.heightAnchor.constraint(equalTo: view.readableContentGuide.heightAnchor,
-                                                   multiplier: 0.5)
-        ])
-        constraints.append(contentsOf: [
+        NSLayoutConstraint.activate([
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,
+                                                constant: 85),
+            collectionView.heightAnchor.constraint(equalTo: view.readableContentGuide.heightAnchor, multiplier: 0.5),
             headerView.leadingAnchor.constraint(equalTo: collectionView.leadingAnchor),
             headerView.trailingAnchor.constraint(equalTo: collectionView.trailingAnchor),
             headerView.bottomAnchor.constraint(equalTo: collectionView.topAnchor),
             headerView.heightAnchor.constraint(equalToConstant: 85)
         ])
         
-        NSLayoutConstraint.activate(constraints)
-        
         collectionView.register(CalendarCollectionViewCell.self,
                                 forCellWithReuseIdentifier: CalendarCollectionViewCell.reuseIdentifier)
         collectionView.dataSource = self
         collectionView.delegate = self
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.navigationBar.isHidden = true
-        
     }
     
     @objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer) {
