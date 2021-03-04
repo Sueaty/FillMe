@@ -316,18 +316,7 @@
                         <viewLayoutGuide key="safeArea" id="tdo-iL-mLa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="3Vi-ah-eXf">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="s4g-lK-JNG">
-                            <connections>
-                                <action selector="cancelButtonTouched:" destination="xht-ee-KIh" id="9FZ-8I-Ort"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="DS9-pL-GeZ">
-                            <connections>
-                                <action selector="doneButtonTouched:" destination="xht-ee-KIh" id="Imk-Lx-jQu"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="3Vi-ah-eXf"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oWs-ES-JAn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

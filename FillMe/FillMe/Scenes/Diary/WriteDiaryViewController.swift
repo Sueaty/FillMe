@@ -8,13 +8,12 @@
 import UIKit
 
 final class WriteDiaryViewController: UIViewController {
-  
+    
     //MARK:- Views
     private lazy var backgroundImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         if let image = UIImage(named: "background") {
-            
             imageView.image = image
         }
         imageView.contentMode = .scaleAspectFit
@@ -26,8 +25,7 @@ final class WriteDiaryViewController: UIViewController {
         let mainTextField = UITextField()
         mainTextField.translatesAutoresizingMaskIntoConstraints = false
         mainTextField.placeholder = "제목 없음"
-        mainTextField.font = UIFont.systemFont(ofSize: 25,
-                                              weight: .heavy)
+        mainTextField.font = UIFont.systemFont(ofSize: 25, weight: .heavy)
         return mainTextField
     }()
     
@@ -50,26 +48,43 @@ final class WriteDiaryViewController: UIViewController {
         return textView
     }()
     
-    private lazy var sharingSwitch: UISwitch = {
-        let switcher = UISwitch()
-        switcher.isOn = false
-        return switcher
+    private lazy var cancelButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("돌아가기", for: .normal)
+        button.isEnabled = false
+        button.layer.cornerRadius = 20
+        button.backgroundColor = .systemGray
+        return button
+    }()
+    
+    private lazy var saveButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("저장하기", for: .normal)
+        button.isEnabled = false
+        button.layer.cornerRadius = 20
+        button.backgroundColor = .secondaryLabel
+        return button
     }()
     
     //MARK:- Properties
     private let todayDate = DateFormatter().today
     private let viewModel = DiaryViewModel()
+    //private let selectedDate: Date
     
     //MARK:- View Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.isHidden = false
-   
+        
+        navigationItem.title = todayDate
+        
         view.addSubview(backgroundImageView)
         view.addSubview(titleTextField)
         view.addSubview(separatorView)
         view.addSubview(contentTextView)
-        view.addSubview(sharingSwitch)
+        view.addSubview(cancelButton)
+        view.addSubview(saveButton)
         
         NSLayoutConstraint.activate([
             backgroundImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -87,27 +102,32 @@ final class WriteDiaryViewController: UIViewController {
             contentTextView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             contentTextView.topAnchor.constraint(equalTo: separatorView.bottomAnchor, constant: 20),
             contentTextView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.width * 0.75),
-            sharingSwitch.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            sharingSwitch.topAnchor.constraint(equalTo: contentTextView.bottomAnchor, constant: 10)
+            cancelButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            cancelButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            cancelButton.topAnchor.constraint(equalTo: contentTextView.bottomAnchor, constant: 20),
+            cancelButton.heightAnchor.constraint(equalToConstant: 44),
+            saveButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            saveButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            saveButton.topAnchor.constraint(equalTo: cancelButton.bottomAnchor, constant: 10),
+            saveButton.heightAnchor.constraint(equalToConstant: 44)
         ])
+
     }
-    
-    //MARK:- IBActions
-    @IBAction func doneButtonTouched(_ sender: UIBarButtonItem) {
-        if let title = titleTextField.text,
-           let content = contentTextView.text {
-            let share = sharingSwitch.isOn
-            let diary = Diary(date: todayDate,
-                              title: title,
-                              content: content,
-                              share: share)
-            viewModel.saveDiary(diary: diary)
-        }
-    }
-    
-    @IBAction func cancelButtonTouched(_ sender: UIBarButtonItem) {
-        navigationController?.navigationBar.isHidden = true
-        navigationController?.popViewController(animated: true)
-    }
-    
+
+}
+
+extension WriteDiaryViewController {
+//    @objc func cancelButtonTouched(_ sender: UIButton) {
+//        navigationController?.popViewController(animated: true)
+//    }
+//
+//    @objc func saveButtonTouched(_ sender: UIButton) {
+//        if let title = titleTextField.text,
+//           let content = contentTextView.text {
+//            let diary = Diary(date: todayDate,
+//                              title: title,
+//                              content: content)
+//            viewModel.saveDiary(diary: diary)
+//        }
+//    }
 }
