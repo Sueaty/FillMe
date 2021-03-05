@@ -11,7 +11,7 @@
 		8003DD9625C402F0001C7A64 /* DiaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8003DD9525C402F0001C7A64 /* DiaryViewModel.swift */; };
 		8003DD9A25C40499001C7A64 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8003DD9925C40499001C7A64 /* NetworkService.swift */; };
 		8003DD9D25C404BF001C7A64 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8003DD9C25C404BF001C7A64 /* Errors.swift */; };
-		8003DDC625C6BABB001C7A64 /* ModelCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8003DDC525C6BABB001C7A64 /* ModelCollection.swift */; };
+		8003DDC625C6BABB001C7A64 /* CalendarModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8003DDC525C6BABB001C7A64 /* CalendarModels.swift */; };
 		8003DDCA25C6BADD001C7A64 /* SigninUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8003DDC925C6BADD001C7A64 /* SigninUseCase.swift */; };
 		8003DDCD25C6BB14001C7A64 /* SigninViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8003DDCC25C6BB14001C7A64 /* SigninViewModel.swift */; };
 		801175AB25D28BA300FB400F /* DiaryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801175AA25D28BA300FB400F /* DiaryUseCase.swift */; };
@@ -24,6 +24,10 @@
 		804B159C25C0964500AA736F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804B159B25C0964500AA736F /* ProfileViewController.swift */; };
 		804B15A825C09A0600AA736F /* NameImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804B15A725C09A0600AA736F /* NameImageView.swift */; };
 		804B15AB25C09A1000AA736F /* NameImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 804B15AA25C09A1000AA736F /* NameImageView.xib */; };
+		8056956225E61449002C709C /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8056956125E61449002C709C /* CalendarCollectionViewCell.swift */; };
+		8056956525E62762002C709C /* UserModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8056956425E62762002C709C /* UserModels.swift */; };
+		8056956825E6276A002C709C /* DiaryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8056956725E6276A002C709C /* DiaryModels.swift */; };
+		8056956C25E63659002C709C /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8056956B25E63659002C709C /* CalendarManager.swift */; };
 		806417B425C1DB1600AED97C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806417B325C1DB1600AED97C /* LoginViewController.swift */; };
 		806417B825C1E34700AED97C /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 806417B725C1E34700AED97C /* LoginView.xib */; };
 		806417BB25C1E5B700AED97C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806417BA25C1E5B700AED97C /* LoginView.swift */; };
@@ -33,6 +37,7 @@
 		806417CF25C2FDA100AED97C /* SigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806417CE25C2FDA100AED97C /* SigninView.swift */; };
 		806417D225C3024A00AED97C /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806417D125C3024A00AED97C /* SigninViewController.swift */; };
 		806417D725C31E0900AED97C /* WriteDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806417D625C31E0900AED97C /* WriteDiaryViewController.swift */; };
+		80931B4025E4FE6F00FCBE4E /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80931B3F25E4FE6F00FCBE4E /* CalendarHeaderView.swift */; };
 		80E8F02A25DCF23100265E69 /* DateFormatter+today.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E8F02925DCF23100265E69 /* DateFormatter+today.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +45,7 @@
 		8003DD9525C402F0001C7A64 /* DiaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewModel.swift; sourceTree = "<group>"; };
 		8003DD9925C40499001C7A64 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		8003DD9C25C404BF001C7A64 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
-		8003DDC525C6BABB001C7A64 /* ModelCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCollection.swift; sourceTree = "<group>"; };
+		8003DDC525C6BABB001C7A64 /* CalendarModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarModels.swift; sourceTree = "<group>"; };
 		8003DDC925C6BADD001C7A64 /* SigninUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninUseCase.swift; sourceTree = "<group>"; };
 		8003DDCC25C6BB14001C7A64 /* SigninViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewModel.swift; sourceTree = "<group>"; };
 		801175AA25D28BA300FB400F /* DiaryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryUseCase.swift; sourceTree = "<group>"; };
@@ -55,6 +60,10 @@
 		804B159B25C0964500AA736F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		804B15A725C09A0600AA736F /* NameImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameImageView.swift; sourceTree = "<group>"; };
 		804B15AA25C09A1000AA736F /* NameImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NameImageView.xib; sourceTree = "<group>"; };
+		8056956125E61449002C709C /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
+		8056956425E62762002C709C /* UserModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModels.swift; sourceTree = "<group>"; };
+		8056956725E6276A002C709C /* DiaryModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryModels.swift; sourceTree = "<group>"; };
+		8056956B25E63659002C709C /* CalendarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
 		806417B325C1DB1600AED97C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		806417B725C1E34700AED97C /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		806417BA25C1E5B700AED97C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -64,6 +73,7 @@
 		806417CE25C2FDA100AED97C /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
 		806417D125C3024A00AED97C /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
 		806417D625C31E0900AED97C /* WriteDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDiaryViewController.swift; sourceTree = "<group>"; };
+		80931B3F25E4FE6F00FCBE4E /* CalendarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeaderView.swift; sourceTree = "<group>"; };
 		80E8F02925DCF23100265E69 /* DateFormatter+today.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+today.swift"; sourceTree = "<group>"; };
 		8E816E60A9EA34A77E19732F /* Pods-FillMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FillMe.release.xcconfig"; path = "Target Support Files/Pods-FillMe/Pods-FillMe.release.xcconfig"; sourceTree = "<group>"; };
 		AC868F18E0F58C1F2A544750 /* Pods_FillMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FillMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,7 +123,9 @@
 		8003DDC425C6BAAA001C7A64 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8003DDC525C6BABB001C7A64 /* ModelCollection.swift */,
+				8003DDC525C6BABB001C7A64 /* CalendarModels.swift */,
+				8056956425E62762002C709C /* UserModels.swift */,
+				8056956725E6276A002C709C /* DiaryModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -207,6 +219,9 @@
 			isa = PBXGroup;
 			children = (
 				806417BE25C1EB4600AED97C /* HomeViewController.swift */,
+				80931B3F25E4FE6F00FCBE4E /* CalendarHeaderView.swift */,
+				8056956125E61449002C709C /* CalendarCollectionViewCell.swift */,
+				8056956B25E63659002C709C /* CalendarManager.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -367,13 +382,18 @@
 				8003DD9D25C404BF001C7A64 /* Errors.swift in Sources */,
 				8003DDCD25C6BB14001C7A64 /* SigninViewModel.swift in Sources */,
 				806417B425C1DB1600AED97C /* LoginViewController.swift in Sources */,
-				8003DDC625C6BABB001C7A64 /* ModelCollection.swift in Sources */,
+				8003DDC625C6BABB001C7A64 /* CalendarModels.swift in Sources */,
 				806417D225C3024A00AED97C /* SigninViewController.swift in Sources */,
+				8056956525E62762002C709C /* UserModels.swift in Sources */,
+				8056956825E6276A002C709C /* DiaryModels.swift in Sources */,
 				80E8F02A25DCF23100265E69 /* DateFormatter+today.swift in Sources */,
+				80931B4025E4FE6F00FCBE4E /* CalendarHeaderView.swift in Sources */,
 				806417BF25C1EB4600AED97C /* HomeViewController.swift in Sources */,
+				8056956225E61449002C709C /* CalendarCollectionViewCell.swift in Sources */,
 				806417C825C298E100AED97C /* ProfileTableViewController.swift in Sources */,
 				804B156025BF330200AA736F /* SceneDelegate.swift in Sources */,
 				8003DD9A25C40499001C7A64 /* NetworkService.swift in Sources */,
+				8056956C25E63659002C709C /* CalendarManager.swift in Sources */,
 				806417D725C31E0900AED97C /* WriteDiaryViewController.swift in Sources */,
 				8003DDCA25C6BADD001C7A64 /* SigninUseCase.swift in Sources */,
 			);

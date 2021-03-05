@@ -64,8 +64,7 @@ extension DiaryUseCase {
     private func diaryToMetaData(diary: Diary) -> [String: Any] {
         return ["date": diary.date,
                 "title": diary.title,
-                "content": diary.content,
-                "share": diary.share]
+                "content": diary.content]
     }
     
 }
