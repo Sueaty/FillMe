@@ -86,9 +86,9 @@ final class WriteDiaryViewController: UIViewController {
     //MARK:- View Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemBackground
         
         navigationItem.title = DateFormatter().diaryTitleDate(date: selectedDate)
-        view.backgroundColor = .systemBackground
         
         view.addSubview(backgroundImageView)
         view.addSubview(titleTextField)

@@ -37,10 +37,15 @@ final class HomeViewController: UIViewController {
     //MARK:- View Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        headerView.baseDate = calendarManager.baseDate
+        view.backgroundColor = .systemBackground
         navigationItem.largeTitleDisplayMode = .always
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = DateFormatter().homeTitle
         navigationItem.rightBarButtonItem = settingBarButton
+        navigationItem.rightBarButtonItem?.target = self
+        navigationItem.rightBarButtonItem?.action = #selector(showProfileViewController(_:))
         
         let swipeRight = UISwipeGestureRecognizer(target: self,
                                                   action: #selector(respondToSwipeGesture(_:)))
@@ -51,11 +56,7 @@ final class HomeViewController: UIViewController {
         swipeLeft.direction = .left
         collectionView.addGestureRecognizer(swipeRight)
         collectionView.addGestureRecognizer(swipeLeft)
-        
         collectionView.backgroundColor = .systemBackground
-        view.backgroundColor = .systemBackground
-        
-        headerView.baseDate = calendarManager.baseDate
         
         if let user = Auth.auth().currentUser {
             // do something
@@ -65,15 +66,13 @@ final class HomeViewController: UIViewController {
             print("User should login")
         }
         
-        // add subviews
         view.addSubview(collectionView)
         view.addSubview(headerView)
         
         NSLayoutConstraint.activate([
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,
-                                                constant: 85),
+            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 85),
             collectionView.heightAnchor.constraint(equalTo: view.readableContentGuide.heightAnchor, multiplier: 0.5),
             headerView.leadingAnchor.constraint(equalTo: collectionView.leadingAnchor),
             headerView.trailingAnchor.constraint(equalTo: collectionView.trailingAnchor),
@@ -85,23 +84,6 @@ final class HomeViewController: UIViewController {
                                 forCellWithReuseIdentifier: CalendarCollectionViewCell.reuseIdentifier)
         collectionView.dataSource = self
         collectionView.delegate = self
-    }
-    
-    @objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer) {
-        guard let gesture = gesture as? UISwipeGestureRecognizer else { return }
-        switch gesture.direction {
-        case .left:
-            calendarManager.baseDate
-                = calendarManager.calendar.date(byAdding: .month,
-                                                value: 1,
-                                                to: calendarManager.baseDate) ?? calendarManager.baseDate
-        default:
-            calendarManager.baseDate
-                = calendarManager.calendar.date(byAdding: .month,
-                                                value: -1,
-                                                to: calendarManager.baseDate) ?? calendarManager.baseDate
-        }
-        updateCalendar()
     }
     
     private func updateCalendar() {
@@ -120,6 +102,33 @@ final class HomeViewController: UIViewController {
         }
     }
 
+}
+
+private extension HomeViewController {
+    
+    @objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer) {
+        guard let gesture = gesture as? UISwipeGestureRecognizer else { return }
+        switch gesture.direction {
+        case .left:
+            calendarManager.baseDate
+                = calendarManager.calendar.date(byAdding: .month,
+                                                value: 1,
+                                                to: calendarManager.baseDate) ?? calendarManager.baseDate
+        default:
+            calendarManager.baseDate
+                = calendarManager.calendar.date(byAdding: .month,
+                                                value: -1,
+                                                to: calendarManager.baseDate) ?? calendarManager.baseDate
+        }
+        updateCalendar()
+    }
+    
+    @objc func showProfileViewController(_ sender: UIBarButtonItem) {
+        // TO DO :
+            // Profile을 Tab에서 뺴고 HomeVC의 navigation stack에 추가되도록
+        let profileVC = ProfileViewController()
+    }
+    
 }
 
 // MARK: - UICollectionViewDataSource

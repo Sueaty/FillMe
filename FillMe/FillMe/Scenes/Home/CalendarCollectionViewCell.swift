@@ -81,7 +81,7 @@ private extension CalendarCollectionViewCell {
 
     func updateSelectionStatus() {
         guard let day = day else { return }
-        if day.number == "1" {
+        if day.number.contains("5") {
             applySelectedStyle()
         } else {
             applyDefaultStyle(isWithinDisplayedMonth: day.isWithinDisplayedMonth)
