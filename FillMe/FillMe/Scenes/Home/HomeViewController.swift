@@ -161,6 +161,11 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
                         didSelectItemAt indexPath: IndexPath) {
         
         let day = calendarManager.days[indexPath.item]
+        let diaryVC = WriteDiaryViewController(selectedDate: day.date) { [weak self] date in
+            guard let self = self else { return }
+            collectionView.reloadItems(at: [indexPath])
+        }
+        navigationController?.pushViewController(diaryVC, animated: true)
         // TO DO:
             // navigate to 'WriteDiaryVC' so that user can fill the diary for that day
             // of course, it must be disable if selected date is in the future

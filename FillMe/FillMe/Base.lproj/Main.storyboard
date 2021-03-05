@@ -275,15 +275,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNX-1l-UVN">
-                                <rect key="frame" x="181" y="763" width="52" height="30"/>
-                                <state key="normal" title="일기쓰기"/>
-                                <connections>
-                                    <segue destination="xht-ee-KIh" kind="push" id="Vbo-2w-nNE"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nWh-iL-51Z">
-                                <rect key="frame" x="181" y="733" width="52" height="30"/>
+                                <rect key="frame" x="181" y="763" width="52" height="30"/>
                                 <state key="normal" title="로그아웃"/>
                                 <connections>
                                     <action selector="logoutButtonTouched:" destination="wUV-B0-r6E" eventType="touchUpInside" id="FUN-e2-gdC"/>
@@ -293,10 +286,8 @@
                         <viewLayoutGuide key="safeArea" id="kjL-yf-lq6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="kjL-yf-lq6" firstAttribute="bottom" secondItem="nWh-iL-51Z" secondAttribute="bottom" constant="50" id="5Ia-Gj-bvN"/>
-                            <constraint firstItem="tNX-1l-UVN" firstAttribute="centerX" secondItem="KQh-fR-LCv" secondAttribute="centerX" id="H16-hq-fLD"/>
+                            <constraint firstItem="kjL-yf-lq6" firstAttribute="bottom" secondItem="nWh-iL-51Z" secondAttribute="bottom" constant="20" id="5Ia-Gj-bvN"/>
                             <constraint firstItem="nWh-iL-51Z" firstAttribute="centerX" secondItem="KQh-fR-LCv" secondAttribute="centerX" id="dSt-j2-RW2"/>
-                            <constraint firstItem="kjL-yf-lq6" firstAttribute="bottom" secondItem="tNX-1l-UVN" secondAttribute="bottom" constant="20" id="ixC-6a-YRz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ocf-29-4Hk"/>

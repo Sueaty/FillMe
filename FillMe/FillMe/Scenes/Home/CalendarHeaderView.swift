@@ -35,7 +35,7 @@ final class CalendarHeaderView: UIView {
     //MARK:- Properties
     var baseDate = Date() {
         didSet {
-            monthLabel.text = DateFormatter().currentCalendarTitle(baseDate: baseDate)
+            monthLabel.text = DateFormatter().currentCalendarTitle(date: baseDate)
         }
     }
     

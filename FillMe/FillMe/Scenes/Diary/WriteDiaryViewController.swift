@@ -52,7 +52,6 @@ final class WriteDiaryViewController: UIViewController {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("돌아가기", for: .normal)
-        button.isEnabled = false
         button.layer.cornerRadius = 20
         button.backgroundColor = .systemGray
         return button
@@ -71,13 +70,25 @@ final class WriteDiaryViewController: UIViewController {
     //MARK:- Properties
     private let todayDate = DateFormatter().today
     private let viewModel = DiaryViewModel()
-    //private let selectedDate: Date
+    private let selectedDate: Date
+    private let diaryUpdate: ((Date) -> Void)
+    
+    init(selectedDate: Date, diaryUpdate: @escaping ((Date) -> Void)) {
+        self.selectedDate = selectedDate
+        self.diaryUpdate = diaryUpdate
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     //MARK:- View Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = todayDate
+        navigationItem.title = DateFormatter().diaryTitleDate(date: selectedDate)
+        view.backgroundColor = .systemBackground
         
         view.addSubview(backgroundImageView)
         view.addSubview(titleTextField)
@@ -111,23 +122,31 @@ final class WriteDiaryViewController: UIViewController {
             saveButton.topAnchor.constraint(equalTo: cancelButton.bottomAnchor, constant: 10),
             saveButton.heightAnchor.constraint(equalToConstant: 44)
         ])
-
+        
+        cancelButton.addTarget(self,
+                               action: #selector(returnButtonTouched(_:)),
+                               for: .touchUpInside)
+        saveButton.addTarget(self,
+                             action: #selector(saveButtonTouched(_:)),
+                             for: .touchUpInside)
     }
 
 }
 
 extension WriteDiaryViewController {
-//    @objc func cancelButtonTouched(_ sender: UIButton) {
-//        navigationController?.popViewController(animated: true)
-//    }
-//
-//    @objc func saveButtonTouched(_ sender: UIButton) {
-//        if let title = titleTextField.text,
-//           let content = contentTextView.text {
-//            let diary = Diary(date: todayDate,
-//                              title: title,
-//                              content: content)
-//            viewModel.saveDiary(diary: diary)
-//        }
-//    }
+    
+    @objc func returnButtonTouched(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+
+    @objc func saveButtonTouched(_ sender: UIButton) {
+        if let title = titleTextField.text,
+           let content = contentTextView.text {
+            let diary = Diary(date: todayDate,
+                              title: title,
+                              content: content)
+            viewModel.saveDiary(diary: diary)
+        }
+    }
+    
 }
